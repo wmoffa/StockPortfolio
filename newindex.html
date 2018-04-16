@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Stock Management Portfolio</title>
+	<link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- JQuery link   -->
+	<script src="https://code.jquery.com/jquery.js"> </script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+	<script>
+ // Initialize Firebase
+ var config = {
+ 	apiKey: "AIzaSyDYtGuQAly920C-DqosCvmxDRrm5eVnf9Y",
+ 	authDomain: "stock-93e89.firebaseapp.com",
+ 	databaseURL: "https://stock-93e89.firebaseio.com",
+ 	projectId: "stock-93e89",
+ 	storageBucket: "stock-93e89.appspot.com",
+ 	messagingSenderId: "883953047486"
+ };
+ firebase.initializeApp(config);
+ var database = firebase.database();
+
+ $( function() {
+ 	$( "#datepicker" ).datepicker({ minDate: -90, maxDate: "+0D" });
+ } );
+</script>
+
+</head>
+<body>
+
+	<nav class="navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+				<a class="navbar-brand" href="#"> My Stock Portfolio </a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<!-- <li class="active"><a href="#">Stock Information</a></li> -->
+        <!-- <li><a href="#">Support</a></li>
+        	<li><a href="#">Contact Us</a></li> -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        	<li class="user"><span class="glyphicon glyphicon-user"></span> Welcome Lucy !</a></li>
+        	<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> LogOut</a></li>
+        </ul>
+    </div>
+</div>
+</nav>	
+
+<container>
+	<div class="jumbotron">
+
+	</div>
+	<div>
+		<iframe width="100%" noresize="noresize" scrolling="no" height="20" frameborder="0" 
+		src="https://widgets.tc2000.com/WidgetServer.ashx?id=44477"></iframe>
+	</div>
+	<section class="row center">
+		<article class="col-xs-12">
+			<button class="btn btn-success" data-toggle="modal" data-target="#modall"><span class="glyphicon glyphicon-plus">&nbsp;</span>Stock Information</button>
+			<div class="modal view fade" id="modall">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button class="close" data-dismiss="modal" id="stockInfo">&times;</button>
+							<h5>Add Stock Information</h5>
+							<form class="form-group">
+								<input id="getName" type="text" class="form-control" placeholder="Search for Company">
+								<button type="button" class="btn btn-success" id='searchButton'>
+									<span class="glyphicon glyphicon-search"> Search</span></button>
+									<button type="button" class="btn btn-default" id='cancelBtn'>
+										<span class="glyphicon glyphicon-remove"> Cancel</span></button>
+										<div id='lookup'></div>
+									</form>
+								</div>
+								<div id="addinfo" class="modal-body">
+									<p><span class="cap">All Fields Are Required.</span></p>
+									<form class="form-horizontal" id="forminfo">
+										<div class="form-group">
+											<label for="symbol" class="col-sm-4">Stock Symbol</label>
+											<input class="form-control" value="" id="symbol" readonly></input>
+										</div>
+										<div class="form-group">
+											<label for="stockname" class="col-sm-4">Stock Name</label>
+											<input class="form-control" value="" id="stockName" readonly></input>
+										</div>
+
+										<div class="form-group radio-inline required">
+											<label>Type of Transaction</label>
+											<input type="radio" name="transaction" value="buy">
+											<label class="label2">Purchased</label>
+											<input type="radio" name="transaction" value="sell">
+											<label class="label2">Sold</label>
+										</div>
+
+										<div class="form-group required">
+											<label for="sharespurchased" class="col-sm-4">Shares Purchased</label>
+											<input type="number" class="form-control" min="0" id="sharesPurchased" placeholder="Enter Number of Shares Purchased" required></input>
+										</div>
+
+										<div class="form-group required">
+											<label for="dateofpurchase" class="col-sm-4">Date of Purchase</label>
+											<input type="text" class="form-control" name="date" id="datepicker" placeholder="MM/DD/YYYY" required></input>
+										</div>
+
+										<div class="form-group required">
+											<label for="pricePaid" class="col-sm-4">Enter Price Paid</label>
+											<input type="number" class="form-control" id="pricePaid" min="0.01" step="0.01" max="2500" placeholder="999.99" required>
+										</div>	
+									</form> 
+
+									<div id="btn" class="modal-footer">
+										<button class="btn btn-default" data-dismiss="modal" id="cancel">CANCEL</button>
+										<button type="submit" class="btn btn-success" id="addStock">ADD</button>
+									</div>
+								</div> <!-- end of modal body -->
+							</div> <!-- end of modal content -->
+						</div> <!-- end of modal dialog -->
+					</div> 
+
+					<div class="investmenttotal">0</div>
+
+					<div class="col-xs-12">
+
+					</div>
+					<div id="stage"></div>
+				</article>
+
+				<addbox class="col-xs-5 border">
+					<div class='newstock'>
+						<h3><span class="glyphicon glyphicon-th-list">&nbsp;</span>Add A New Stock</h3>
+						<div class="news_feed">
+						</div>
+					</div>
+				</addbox>
+				<aside class="col-xs-7 border">
+					<div class="news_chart">
+						<h3><span class="glyphicon glyphicon-th-list">&nbsp;</span>Latest News Information</h3>
+						<div class="news_feed">
+						</div>
+					</div>
+				</aside>
+			</section>
+		</container>
+
+		<!-- JavaScript -->
+
+		<script type="text/javascript" src="./assets/js/stockfirebase.js"></script>
+		<script type="text/javascript" src="./assets/js/lookup.js"></script>
+		<script type="text/javascript" src="./assets/js/form.js"></script>
+
+
+	</body>
+	</html>

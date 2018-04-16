@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firebase Auth</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+
+    <!-- jquery link -->
+    <script src="https://code.jquery.com/jquery.js"> </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <style>
+
+    body {
+      margin-top: 20px;
+      background-image: linear-gradient(90deg, #d0d2d3, #939597);
+  }
+  .panel-info>.panel-heading {
+    background-color: #858f9e;
+    border-color: #eeeeee;
+}
+.panel-info {
+    border-color: #cccccc;
+}
+.panel-title{
+    color: #fff;
+    text-transform: uppercase;
+}
+.glypclr{
+    background-color: #457bbe;
+    border:none;
+    color:#fff;
+}
+
+</style>
+
+</head>
+<body>
+    
+    <div id="container">
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">Sign In</div>
+                </div>     
+
+                <div style="padding-top:30px" class="panel-body">
+
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                    
+                    <form id="loginform" class="form-horizontal" role="form">                      
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="txtEmail" type="text" class="form-control" name="email" value="" placeholder="email@account.com">                                        
+                        </div>
+                        
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="txtPassword" type="password" class="form-control" name="password" placeholder="Password">
+                        </div>
+                        
+                        <div style="margin-top:10px" class="form-group">
+                            <!-- Button -->
+                            <div class="col-sm-12 controls">
+                                <a id="btnLogin" href="#" class="btn btn-success btn-action">LOGIN  </a>
+                                <a id="btnSignUp" href="#" class="btn btn-primary">SIGN UP</a>
+                                <a id="btnLogout" class="btn btn-action" hidden="hidden">Log Out</a>
+                            </div>
+                        </div>
+                    </form>     
+
+                </div>                     
+            </div>
+
+            <script src="signon.js"></script>
+
+        </body>
+        </html>

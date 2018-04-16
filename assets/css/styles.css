@@ -1,0 +1,200 @@
+/*-- header --*/
+.navbar-inverse {
+    background:#484755;
+    border-top: 3px solid #e67434;
+}
+.user{
+    color:#fff;
+    padding:15px;
+}
+
+
+body {
+    background-image:url(../images/orange.jpg);
+}
+
+.glyphicon .glyphicon-th-list {
+    color:white;
+}
+.investmenttotal {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align:right;
+    padding:10px;
+}
+/*jumotron image*/
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: url(../images/choice2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}
+/*button*/
+.btn-success{
+    background-color:#85bb65;
+}
+.btn-default{
+    color: #fff;
+    background-color: #101010;
+    border-color: #ccc;
+}
+/*modal header color change*/
+.modal-header {
+    background-color: #efefef;
+    border-bottom: 1px dashed #E7E7E7;
+}
+/*container*/
+p {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+}
+.cap{
+    font-size: 12px;
+    color:"f1f1f1";
+    padding: 5px 0;
+
+}
+/*section*/
+.center {
+    margin: 30px auto;
+    width: 100%;
+}
+section{	
+	max-width:960px;	
+}
+
+article{
+	float:left;
+}
+
+/*holder*/
+
+.holder{
+	padding:40px;
+}
+
+/*panel*/
+h4.panel-title.title {
+    font-size: 1em;
+    color: #212121;
+    text-transform: capitalize;
+}
+h4.panel-title.title a {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0px;
+}
+.panel-body{
+    padding:10px;
+}
+
+/*toggle arrows*/
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+    float: right;        /* adjust as needed */
+    color: grey;         /* adjust as needed */
+}
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+}
+
+
+.border{
+    border-top: 1px dashed #E7E7E7;
+    padding:10px 0;
+}
+.sourceDate {
+   text-align: right;
+   color: white;
+   padding: 10px 10px 0;
+}
+.sell {
+   color: red;
+}
+
+.news_chart h4 {
+   text-transform: uppercase;
+   font-size: 1em;
+   color: white;
+   color: #495d94; 
+   padding: .8em 1em;
+   background: #EFEFEF ;
+   margin-bottom: 1em;
+}
+.news_chart h3{
+    text-transform: uppercase;
+    margin-top:0;
+    font-size: 1em;
+    color: #212121;
+    color: white;
+    padding: .8em 1em;
+ /* background: #EFEFEF;*/
+    margin-bottom: 1em;
+}
+
+.newstock h4 {
+   text-transform: uppercase;
+   font-size: 1em;
+   color: #495d94;
+   padding: .8em 1em;
+   background: #EFEFEF ;
+   margin-bottom: 1em;
+}
+.newstock h3{
+    text-transform: uppercase;
+    margin-top:0;
+    font-size: 1em;
+    color: #212121;
+    color: white;
+    padding: .8em 1em;
+  /*  background: #EFEFEF;*/
+    margin-bottom: 1em;
+}
+
+/*form*/
+
+.modal-body{
+    margin:0 30px;
+}
+#lookupID{
+    width: 75%;
+}
+#getName{
+    text-transform: uppercase;
+    width:75%;
+}
+.form-control{
+    display:inline;
+    width:60%;
+}
+.form-horizontal .radio-inline {
+    margin-bottom: 10px;
+}
+.checkbox-inline, .radio-inline {
+    padding-left: 14px;
+}
+.radio-inline input[type=radio] {
+    margin-left: 30px;
+}
+.radio-inline .label2 {
+    margin-left: 50px;
+}
+
+a {
+  color: white;
+}
+
+.accordion-toggle:hover {
+  color: blue;
+}
+
+.a:hover {
+  color: yellow;
+}

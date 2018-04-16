@@ -1,2 +1,2 @@
-# StockPortfolio
-Project 1
+# RutgersProject1
+Rutger Bootcamp Project 1 - Stock Portfolio

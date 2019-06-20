@@ -213,7 +213,7 @@ $(document).ready(function() {
 			        $.ajax({
 			          url: queryURL,
 			          method: 'GET',
-			          async: false
+			          async: true
 			        }).done(function(response) {
 
 			           for (i=0; i<2; i++) {

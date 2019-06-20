@@ -207,13 +207,14 @@ $(document).ready(function() {
 				// process before - there is no need to function a second time for a
 				// since all of the information is the same - current price is recorder
 				// for this stock and the news section will be updated in this section
+		var queryUrl - "https://cloud.iexapis.com/stable/stock/"+ q + "/quote?token=pk_eca1455683354be6b75ccb3356c4f1a1"
 
-			    var queryURL = "https://api.iextrading.com/1.0/stock/market/batch?symbols=" + q + "&types=quote,news,chart&range=1m&last=2";
+			    //var queryURL = "https://api.iextrading.com/1.0/stock/market/batch?symbols=" + q + "&types=quote,news,chart&range=1m&last=2";
 
 			        $.ajax({
 			          url: queryURL,
 			          method: 'GET',
-			          async: true
+			          async: false
 			        }).done(function(response) {
 
 			           for (i=0; i<2; i++) {

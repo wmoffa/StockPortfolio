@@ -27,7 +27,7 @@ $(document).ready(function() {
             // crossDomain: true,
             method: "GET",
             contentType: "application/json; charset=utf-8",
-            async: false,
+            async: true,
             url: symbolUrl,
             dataType: "jsonp"
         }).done(function(lookupData) {
